@@ -1,45 +1,37 @@
-# Projeto 1 - Classificação de Crédito
+# Projeto 01 - Concessão de Cartões de Crédito
 
-Como primeira etapa do CRISP-DM, vamos entender do que se trata o negócio, e quais os objetivos.
+## Descrição
 
-Este é um problema de concessão de cartões de crédito, publicado no Kaggle, uma plataforma que promove desafios de ciência de dados, oferecendo prêmios em dinheiro para os melhores colocados. O link original está aqui.
+Este projeto visa desenvolver um modelo preditivo para identificar o risco de inadimplência em propostas de cartões de crédito. O modelo será utilizado para auxiliar os mutuários em suas decisões financeiras, ajudando a prever se um cliente poderá se tornar um mau pagador (inadimplente) nos próximos 12 meses.
 
-Essa é uma base de proponentes de cartão de crédito, nosso objetivo é construir um modelo preditivo para identificar o risco de inadimplência (tipicamente definida pela ocorrência de um atraso maior ou igual a 90 em um horizonte de 12 meses) através de variáveis que podem ser observadas na data da avaliação do crédito (tipicamente quando o cliente solicita o cartão).
+## Objetivos
 
-Atividades do CRISP-DM:
+- **Objetivo do negócio**: Ajudar os mutuários a avaliarem suas próprias decisões de crédito.
+- **Objetivo da modelagem**: Desenvolver um modelo preditivo robusto para identificar inadimplentes com base em dados disponíveis no momento da solicitação do cartão.
 
-    Objetivos do negócio
+## Etapas do Projeto
 
-O objetivo aqui é que o modelo sirva o mutuário (o cliente) para que avalie suas próprias decisões, e não a instituição de crédito.
+### 1. Entendimento do Negócio
+- Análise do problema de concessão de cartões de crédito e definição dos objetivos.
 
-    Objetivos da modelagem
+### 2. Entendimento dos Dados
+- Análise de 15 variáveis, incluindo características demográficas e financeiras dos clientes.
+- Variável resposta: **mau** (indicadora de mau pagador).
 
-O objetivo está bem definido: desenvolver o modelo preditivo de modo a auxiliar o mutuário a tomar suas próprias decisões referentes a crédito.
+### 3. Preparação dos Dados
+- Limpeza e formatação dos dados, incluindo a transformação de variáveis categóricas em variáveis dummy.
 
-Nessa etapa também se avalia a situação da empresa/segmento/assunto de modo a se entender o tamanho do público, relevância, problemas presentes e todos os detalhes do processo gerador do fenômeno em questão, e portanto dos dados.
+### 4. Modelagem
+- Utilização da técnica de **Floresta Aleatória** (Random Forest) para construir o modelo preditivo.
+- Divisão dos dados em conjuntos de treinamento e teste para avaliação do modelo.
 
-Também é nessa etapa que se constrói um planejamento do projeto.
-Etapa 2 Crisp-DM: Entendimento dos dados
+### 5. Avaliação dos Resultados
+- Cálculo da acurácia do modelo e análise da matriz de confusão para avaliar a performance.
 
-A segunda etapa é o entendimento dos dados. Foram fornecidas 15 variáveis mais a variável resposta (em negrito na tabela). O significado de cada uma dessas variáveis se encontra na tabela.
-Dicionário de dados
+### 6. Implantação
+- Discussão sobre como implementar o modelo em um sistema automatizado de concessão de crédito.
 
-Os dados estão dispostos em uma tabela com uma linha para cada cliente, e uma coluna para cada variável armazenando as características desses clientes. Colocamos uma cópia o dicionário de dados (explicação dessas variáveis) abaixo neste notebook:
+## Tecnologias Utilizadas
 
-Variable Name 	Description 	Tipo
-sexo 	M = 'Masculino'; F = 'Feminino' 	M/F
-posse_de_veiculo 	Y = 'possui'; N = 'não possui' 	Y/N
-posse_de_imovel 	Y = 'possui'; N = 'não possui' 	Y/N
-qtd_filhos 	Quantidade de filhos 	inteiro
-tipo_renda 	Tipo de renda (ex: assaliariado, autônomo etc) 	texto
-educacao 	Nível de educação (ex: secundário, superior etc) 	texto
-estado_civil 	Estado civil (ex: solteiro, casado etc) 	texto
-tipo_residencia 	tipo de residência (ex: casa/apartamento, com os pais etc) 	texto
-idade 	idade em anos 	inteiro
-tempo de emprego 	tempo de emprego em anos 	inteiro
-possui_celular 	Indica se possui celular (1 = sim, 0 = não) 	binária
-possui_fone_comercial 	Indica se possui telefone comercial (1 = sim, 0 = não) 	binária
-possui_fone 	Indica se possui telefone (1 = sim, 0 = não) 	binária
-possui_email 	Indica se possui e-mail (1 = sim, 0 = não) 	binária
-qt_pessoas_residencia 	quantidade de pessoas na residência 	inteiro
-mau 	indicadora de mau pagador (True = mau, False = bom) 	binária
+- **Linguagem**: Python
+- **Bibliotecas**: pandas, seaborn, matplotlib, scikit-learn
